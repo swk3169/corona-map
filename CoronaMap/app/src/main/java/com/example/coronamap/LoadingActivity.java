@@ -53,7 +53,7 @@ public class LoadingActivity extends AppCompatActivity {
 
     private ArrayList<Clinic> xml_parse() {
         ArrayList<Clinic> clinicsList = new ArrayList<Clinic>();
-        InputStream inputStream = getResources().openRawResource(R.raw.selectiveclinic_all);
+        InputStream inputStream = getResources().openRawResource(R.raw.selectiveclinic_test);
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
         BufferedReader reader = new BufferedReader(inputStreamReader);
 
@@ -146,9 +146,9 @@ public class LoadingActivity extends AppCompatActivity {
         }
         if(addresses != null) {
             for(int i = 0 ; i < addresses.size() ; i++) {
-                Address lating = addresses.get(i);
-                location.setLatitude(lating.getLatitude());
-                location.setLongitude(lating.getLongitude());
+                Address latlng = addresses.get(i);
+                location.setLatitude(latlng.getLatitude()); // 위도
+                location.setLongitude(latlng.getLongitude());   // 경도
             }
         }
         return location;
