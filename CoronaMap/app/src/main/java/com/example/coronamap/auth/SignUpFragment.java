@@ -1,4 +1,4 @@
-package com.example.coronamap;
+package com.example.coronamap.auth;
 
 import android.content.Intent;
 import android.location.Location;
@@ -15,6 +15,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.example.coronamap.MainActivity;
+import com.example.coronamap.R;
+import com.example.coronamap.model.Clinic;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -33,8 +36,8 @@ public class SignUpFragment extends Fragment {
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
 
-    ArrayList<Clinic> clinics;
-    ArrayList<Location> clinic_address;
+    public ArrayList<Clinic> clinics;
+    public ArrayList<Location> clinic_address;
 
     private FirebaseAuth firebaseAuth;
     public EditText et_pass, et_email;

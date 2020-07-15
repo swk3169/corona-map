@@ -1,4 +1,4 @@
-package com.example.coronamap;
+package com.example.coronamap.model;
 
 import java.io.Serializable;
 

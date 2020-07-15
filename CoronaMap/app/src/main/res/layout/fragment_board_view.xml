@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_gravity="right"
     android:orientation="vertical"
-    tools:context=".BoardViewFragment">
+    tools:context=".board.BoardViewFragment">
 
     <TextView
         android:id="@+id/tv_listview_title"

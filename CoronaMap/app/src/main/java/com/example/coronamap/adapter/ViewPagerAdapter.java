@@ -1,4 +1,4 @@
-package com.example.coronamap;
+package com.example.coronamap.adapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

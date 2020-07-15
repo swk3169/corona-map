@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MyListViewFragment">
+    tools:context=".board.MyListViewFragment">
 
     <ListView
         android:id="@+id/my_listview"

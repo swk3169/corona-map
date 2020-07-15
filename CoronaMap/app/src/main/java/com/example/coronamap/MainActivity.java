@@ -24,6 +24,13 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.coronamap.auth.LoginFragment;
+import com.example.coronamap.auth.SignUpFragment;
+import com.example.coronamap.board.WriteBoardFragment;
+import com.example.coronamap.board.ListViewFragment;
+import com.example.coronamap.board.MyListViewFragment;
+import com.example.coronamap.model.Clinic;
+import com.example.coronamap.model.MyItem;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdate;
@@ -49,14 +56,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     NavigationView navigationView;
     LoginFragment loginFragment;
     SignUpFragment signUpFragment;
-    HomeFragment homeFragment;
-    BulletinboardFragment bulletinboardFragment;
+    WriteBoardFragment bulletinboardFragment;
     ListViewFragment listviewFragment;
     MyListViewFragment myListViewFragment;
 
     FragmentManager manager;
 
-    String userID = "";
+    public String userID = "";
     int vlFlag = 0;
 
     Toolbar toolbar;
@@ -66,8 +72,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private ClusterManager<MyItem> clusterManager;
     private FusedLocationProviderClient mFusedLocationProviderClient;
 
-    ArrayList<Clinic> clinics;
-    ArrayList<Location> clinic_address;
+    public ArrayList<Clinic> clinics;
+    public ArrayList<Location> clinic_address;
     Context context = this;
     final String TAG = "LogMainActivity";
 
@@ -154,7 +160,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         loginFragment = new LoginFragment();
         signUpFragment = new SignUpFragment();
         listviewFragment = new ListViewFragment();
-        bulletinboardFragment = new BulletinboardFragment();
+        bulletinboardFragment = new WriteBoardFragment();
         myListViewFragment = new MyListViewFragment();
 
 
@@ -195,7 +201,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             frameLayout.setVisibility(View.INVISIBLE);
             //manager.beginTransaction().replace(R.id.main_layout, homeFragment).commit();
             //viewPager.setCurrentItem(0);
-            toolbar.setTitle("Home 화면");
+            toolbar.setTitle("Home");
         } else if (position == 1) {
             frameLayout.setVisibility(View.VISIBLE);
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
@@ -203,7 +209,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             ft.commit();
             manager.beginTransaction().replace(R.id.main_layout, bulletinboardFragment).commit();
             //viewPager.setCurrentItem(1);
-            toolbar.setTitle("게시판 작성 화면");
+            toolbar.setTitle("게시판 작성");
         } else if (position == 2) {
             frameLayout.setVisibility(View.VISIBLE);
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
@@ -211,7 +217,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             ft.commit();
             manager.beginTransaction().replace(R.id.main_layout, listviewFragment).commit();
             //viewPager.setCurrentItem(2);
-            toolbar.setTitle("게시판 화면");
+            toolbar.setTitle("게시판");
         } else if (position == 3) {
             frameLayout.setVisibility(View.VISIBLE);
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
@@ -219,7 +225,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             ft.commit();
             manager.beginTransaction().replace(R.id.main_layout, loginFragment).commit();
             //viewPager.setCurrentItem(3);
-            toolbar.setTitle("로그인 화면");
+            toolbar.setTitle("로그인");
         } else if (position == 4) {
             frameLayout.setVisibility(View.VISIBLE);
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
@@ -227,7 +233,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             ft.commit();
             manager.beginTransaction().replace(R.id.main_layout, signUpFragment).commit();
             //viewPager.setCurrentItem(4);
-            toolbar.setTitle("회원가입 화면");
+            toolbar.setTitle("회원가입");
         } else if (position == 5) {
             frameLayout.setVisibility(View.VISIBLE);
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();

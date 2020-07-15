@@ -1,4 +1,4 @@
-package com.example.coronamap;
+package com.example.coronamap.board;
 
 import android.content.Intent;
 import android.location.Location;
@@ -13,6 +13,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.example.coronamap.MainActivity;
+import com.example.coronamap.R;
+import com.example.coronamap.model.BulletinboardModel;
+import com.example.coronamap.model.Clinic;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -28,10 +32,10 @@ import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link BulletinboardFragment#newInstance} factory method to
+ * Use the {@link WriteBoardFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class BulletinboardFragment extends Fragment {
+public class WriteBoardFragment extends Fragment {
 
     ArrayList<Clinic> clinics;
     ArrayList<Location> clinic_address;
@@ -54,7 +58,7 @@ public class BulletinboardFragment extends Fragment {
     EditText et_list_title, et_list_content;
     private DatabaseReference mDatabase;
 
-    public BulletinboardFragment() {
+    public WriteBoardFragment() {
         // Required empty public constructor
     }
 
@@ -67,8 +71,8 @@ public class BulletinboardFragment extends Fragment {
      * @return A new instance of fragment BulletinboardFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static BulletinboardFragment newInstance(String param1, String param2) {
-        BulletinboardFragment fragment = new BulletinboardFragment();
+    public static WriteBoardFragment newInstance(String param1, String param2) {
+        WriteBoardFragment fragment = new WriteBoardFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -94,8 +98,6 @@ public class BulletinboardFragment extends Fragment {
 
         //String s = myApp.getGlobalValue();
 
-
-
         clinics = ((MainActivity)getActivity()).clinics;
         clinic_address = ((MainActivity)getActivity()).clinic_address;
 
@@ -113,6 +115,7 @@ public class BulletinboardFragment extends Fragment {
             public void onClick(View view) {
                 String content = et_list_content.getText().toString();
                 String title = et_list_title.getText().toString();
+
                 userID= ((MainActivity)getActivity()).userID;
 
 

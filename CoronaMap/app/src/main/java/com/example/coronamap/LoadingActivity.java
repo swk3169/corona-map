@@ -10,6 +10,8 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.coronamap.model.Clinic;
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -53,7 +55,7 @@ public class LoadingActivity extends AppCompatActivity {
 
     private ArrayList<Clinic> xml_parse() {
         ArrayList<Clinic> clinicsList = new ArrayList<Clinic>();
-        InputStream inputStream = getResources().openRawResource(R.raw.selectiveclinic_test);
+        InputStream inputStream = getResources().openRawResource(R.raw.selectiveclinic_all);
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
         BufferedReader reader = new BufferedReader(inputStreamReader);
 

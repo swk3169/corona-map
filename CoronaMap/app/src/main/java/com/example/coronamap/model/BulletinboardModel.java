@@ -1,4 +1,4 @@
-package com.example.coronamap;
+package com.example.coronamap.model;
 
 public class BulletinboardModel {
     String id;

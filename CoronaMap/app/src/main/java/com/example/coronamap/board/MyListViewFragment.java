@@ -1,4 +1,4 @@
-package com.example.coronamap;
+package com.example.coronamap.board;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +11,10 @@ import android.widget.ListView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import com.example.coronamap.MainActivity;
+import com.example.coronamap.R;
+import com.example.coronamap.adapter.ListviewAdapter;
+import com.example.coronamap.model.BulletinboardModel;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -18,6 +22,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -37,7 +43,7 @@ public class MyListViewFragment extends Fragment {
     FragmentManager manager;
 
 
-    String userID= "";
+    public String userID= "";
 
     public MyListViewFragment() {
         // Required empty public constructor
@@ -101,7 +107,7 @@ public class MyListViewFragment extends Fragment {
                     String writer = fileSnapshot.child("id").getValue(String.class);
                     String content = fileSnapshot.child("content").getValue(String.class);
 
-                    BulletinboardModel bbm = new BulletinboardModel();
+                    final BulletinboardModel bbm = new BulletinboardModel();
                     bbm.setTitle(title);
                     bbm.setDate(date);
                     bbm.setId(writer);
@@ -109,6 +115,14 @@ public class MyListViewFragment extends Fragment {
 
 
                     items.add(bbm);
+
+                    Collections.sort(items, new Comparator<BulletinboardModel>() {
+                        @Override
+                        public int compare(BulletinboardModel bulletinboardModel, BulletinboardModel t1) {
+                            return t1.getDate().compareTo(bulletinboardModel.getDate());
+                        }
+                    });
+
                 }
                 adapter.notifyDataSetChanged();
             }

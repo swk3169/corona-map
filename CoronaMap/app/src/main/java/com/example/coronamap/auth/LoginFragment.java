@@ -1,4 +1,4 @@
-package com.example.coronamap;
+package com.example.coronamap.auth;
 
 import android.content.Intent;
 import android.location.Location;
@@ -14,6 +14,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.example.coronamap.MainActivity;
+import com.example.coronamap.R;
+import com.example.coronamap.model.Clinic;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -29,8 +32,8 @@ import java.util.ArrayList;
  */
 public class LoginFragment extends Fragment {
     //이메일 비밀번호 로그인 모듈 변수
-    ArrayList<Clinic> clinics;
-    ArrayList<Location> clinic_address;
+    public ArrayList<Clinic> clinics;
+    public ArrayList<Location> clinic_address;
     private FirebaseAuth firebaseAuth;
     //현재 로그인 된 유저 정보를 담을 변수
     FirebaseUser currentUser;
@@ -127,7 +130,7 @@ public class LoginFragment extends Fragment {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // 로그인 성공
-                            Toast.makeText(getContext(), "로그인 성공", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getContext(), "로그인 성공", Toast.LENGTH_SHORT).show();
                             //firebaseAuth.addAuthStateListener(firebaseAuthListener);
                             Log.w("LoginSuccess!!", "성공");
 

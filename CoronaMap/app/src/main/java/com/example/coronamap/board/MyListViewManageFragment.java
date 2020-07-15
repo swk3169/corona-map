@@ -1,4 +1,4 @@
-package com.example.coronamap;
+package com.example.coronamap.board;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +10,9 @@ import android.widget.EditText;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.coronamap.MainActivity;
+import com.example.coronamap.R;
+import com.example.coronamap.model.BulletinboardModel;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
