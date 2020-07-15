@@ -3,24 +3,14 @@ package com.example.coronamap;
 import java.io.Serializable;
 
 public class Clinic implements Serializable {
-    private String number;      // 연번
-    private String sample;      // 채취가능여부
-    private String city;        // 도시명
-    private String district;    // 시군구
-    private String name;        // 병원명
-    private String address;     // 주소
-    private String phoneNumber; // 대표전화번호
+    String number;      // 연번
+    String sample;      // 채취가능여부
+    String city;        // 도시명
+    String district;    // 구
+    String name;        // 병원명
+    String address;     // 주소
+    String phoneNumber; // 대표전화번호
 
-//    Clinic(){};
-//    Clinic (String number, String sample, String city, String district, String name, String address, String phoneNumber) {
-//        this.number = number;
-//        this.sample = sample;
-//        this.city = city;
-//        this.district = district;
-//        this.name = name;
-//        this.address = address;
-//        this.phoneNumber = phoneNumber;
-//    }
     public String getNumber() {
         return number;
     }

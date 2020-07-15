@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav1"
+            android:checked="true"
+            android:enabled="true"
+            android:title="로그인"
+            app:showAsAction="always" />
+
+        <item
+            android:id="@+id/nav2"
+            android:enabled="true"
+            android:title="회원가입"
+            app:showAsAction="always" />
+
+
+        <item
+            android:id="@+id/nav3"
+            android:enabled="true"
+            android:title="나의 게시판"
+            app:showAsAction="always" />
+    </group>
+
+</menu>
