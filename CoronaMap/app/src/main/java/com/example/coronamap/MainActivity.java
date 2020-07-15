@@ -83,6 +83,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             @Override
             public void onMapLoaded() {
                 Log.d(TAG, "Load");
+
                 // 처음 구글맵이 로딩되면 서울시청으로 화면을 고정
                 LatLng latLng = new LatLng(37.564214, 127.001699);
 //                mgoogleMap.setMyLocationEnabled(true);
