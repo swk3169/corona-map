@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="right"
+    android:orientation="vertical"
+    tools:context=".board.BoardViewFragment">
+
+    <TextView
+        android:id="@+id/tv_listview_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="8dp"
+        android:background="#66D6D6D6"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"></View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="right"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_listview_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:textSize="24sp" />
+
+        <View
+            android:id="@+id/view4"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="8dp"
+            android:background="#66D6D6D6"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"></View>
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/back_button_icon"
+            android:gravity="right" />
+    </LinearLayout>
+</LinearLayout>

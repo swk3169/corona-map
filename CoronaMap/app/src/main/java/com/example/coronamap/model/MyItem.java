@@ -1,4 +1,4 @@
-package com.example.coronamap;
+package com.example.coronamap.model;
 
 import com.google.android.gms.maps.model.LatLng;
 import com.google.maps.android.clustering.ClusterItem;

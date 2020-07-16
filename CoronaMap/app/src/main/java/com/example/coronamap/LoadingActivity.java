@@ -1,7 +1,5 @@
 package com.example.coronamap;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.location.Address;
@@ -9,6 +7,10 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.coronamap.model.Clinic;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -146,9 +148,9 @@ public class LoadingActivity extends AppCompatActivity {
         }
         if(addresses != null) {
             for(int i = 0 ; i < addresses.size() ; i++) {
-                Address lating = addresses.get(i);
-                location.setLatitude(lating.getLatitude());
-                location.setLongitude(lating.getLongitude());
+                Address latlng = addresses.get(i);
+                location.setLatitude(latlng.getLatitude()); // 위도
+                location.setLongitude(latlng.getLongitude());   // 경도
             }
         }
         return location;
