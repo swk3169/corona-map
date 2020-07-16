@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CoronaMap</string>
+    <string name="app_name">코로나 클리닉</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

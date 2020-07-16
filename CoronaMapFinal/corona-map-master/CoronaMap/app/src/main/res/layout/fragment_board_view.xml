@@ -12,14 +12,15 @@
         android:id="@+id/tv_listview_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="36sp" />
+        android:textSize="36sp"
+        android:textStyle="bold" />
 
     <View
         android:id="@+id/view3"
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/gradient"
+        android:background="#66D6D6D6"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -43,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:layout_marginTop="8dp"
-            android:background="@drawable/gradient"
+            android:background="#66D6D6D6"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"

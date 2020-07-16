@@ -47,7 +47,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dip"
-            android:background="#4CAF50"
+            android:background="#3B7AA6"
             android:text="@string/btn_login"
             android:textColor="@color/white" />
 
@@ -56,7 +56,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dip"
-            android:background="#4CAF50"
+            android:background="#3B7AA6"
             android:text="@string/btn_cancle"
             android:textColor="@color/white" />
 

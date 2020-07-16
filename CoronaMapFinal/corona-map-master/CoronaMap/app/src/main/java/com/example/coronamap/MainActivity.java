@@ -201,7 +201,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             frameLayout.setVisibility(View.INVISIBLE);
             //manager.beginTransaction().replace(R.id.main_layout, homeFragment).commit();
             //viewPager.setCurrentItem(0);
-            toolbar.setTitle("Home");
+            toolbar.setTitle("코로나 클리닉");
         } else if (position == 1) {
             frameLayout.setVisibility(View.VISIBLE);
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
@@ -240,6 +240,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             ft.hide(fragment);
             ft.commit();
             manager.beginTransaction().replace(R.id.main_layout, myListViewFragment).commit();
+            toolbar.setTitle("My 게시판");
         }
     }
 

@@ -104,6 +104,7 @@ public class WriteBoardFragment extends Fragment {
         et_list_title = view.findViewById(R.id.et_list_title);
         et_list_content = view.findViewById(R.id.et_list_content);
 
+
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
 
